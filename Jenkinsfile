@@ -16,7 +16,7 @@ node {
 
     stage('docker build/push') {
         docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') { //reg, cred
-            def app - dockerbuild("jorgearh/nodejs-app-demo:${commit_id}", '.').push()
+            def app = dockerbuild("jorgearh/nodejs-app-demo:${commit_id}", '.').push()
         }
     }
 }
